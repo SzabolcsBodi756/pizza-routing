@@ -3,17 +3,21 @@ import { Link, useParams } from 'react-router-dom'
 import './Pizzak.css'
 
 const ListaKomponens = ({ elem }) => (
-
   <div>
-     <div className="card" style={{width:"400px"}}>
-  <img className="card-img-top" src={elem.image_url} alt="Card image" style={{width:"200px", height:"150px", display: "block", margin: "0 auto"}} />
-  <div className="card-body">
-    <h4 className="card-title">{elem.name}<br />
-    <Link to={"/pizzak"}><i className="bi bi-paragraph">Főoldal</i></Link>
-    </h4>
-  </div>
-</div>
+    <div className="card" style={{ width: "400px" }}>
+      <img className="card-img-top" src={elem.image_url} alt="Card image"
+        style={{ width: "200px", height: "150px", display: "block", margin: "0 auto" }} />
+      <div className="card-body">
+        <h4 className="card-title">
+          {elem.name}
+          <br />
+          <Link to={"/pizzak"}><i className="bi bi-paragraph">Főoldal</i></Link>
+          <br />
+          <Link to={`/pizza/${elem.id}/edit`}><i className="bi bi-pencil">Szerkesztés</i></Link>
+        </h4>
+      </div>
     </div>
+  </div>
 );
 
 export const Pizza=()=> {
